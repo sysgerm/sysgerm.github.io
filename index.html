@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scrollbar-hide">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css"> 
+
+    <title>sysgerm's shack</title>
+</head>
+<script>
+    window.onload = function () {
+        // temp mail dont even care
+        var requestUrl = "https://api.ipgeolocation.io/ipgeo?apiKey=df0ce2ef645340af9485c49218021ed2";
+        $.ajax({
+            url: requestUrl,
+            type: 'GET',
+            success: function(json)
+            {
+                document.getElementById('query').innerHTML = "#> Connected: " + json.ip + " from";
+                document.getElementById('country').innerHTML = json.country_name;
+            },
+            }); 
+      };
+      
+      document.onkeydown = function(e) {
+        if(e.keyCode == 123) {
+         return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+         return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+         return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+         return false;
+        }
+    
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
+         return false;
+        }      
+     };
+</script>
+<body oncontextmenu="return false">
+    <canvas id=c>Update browser or enable JS</canvas>
+	<script src=main.js></script>
+    <section id="landing" class="h-screen">
+        <div class="absolute z-10 w-full justify-center space-x-2 hidden sm:flex">
+            <p id="query" class="text-white text-center pt-2 overflow-hidden font-mono"></p>
+            
+    
+            <p id="country" class="text-white text-center pt-2 overflow-hidden font-mono"></p>
+        </div>
+
+        <div class="flex h-screen bg-black justify-center items-center flex-col">
+            <img src="./icons/inverted.png" alt="" class="z-10">
+            <h1 class=" text-white font-mono text-3xl z-10 mt-2">uid=1000(sysgerm)</h1>
+            <h1 class="z-10 text-white font-mono mb-5 ">{Security Researcher}</h1>
+    
+    
+            <div class="flex space-x-3 mb-">
+                <a href="https://discord.gg/SZVgcC525m" target="_blank" rel="noopener noreferrer" class="z-10">
+                    <img src="./icons/icons8-discord-24.png" />
+                </a>
+                <a href="https://github.com/sysgerm" target="_blank" rel="noopener noreferrer" class="z-10">
+                    <img src="./icons/icons8-github-24.png" />
+                </a>
+                <a href="https://cosmodiumcs.com" target="_blank" rel="noopener noreferrer" class="z-10">
+                    <img src="./icons/icons8-website-24.png" />
+                </a>
+                <a href="https://youtube.com/CosmodiumCS" target="_blank" rel="noopener noreferrer" class="z-10">
+                    <img src="./icons/icons8-youtube-24.png" />
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 
