@@ -48,10 +48,7 @@ const RGBDR_anim = (() => {
 				colors: ['00f'],
 				/** character-set/alphabet */
 				charset:
-					'0123456789' +
-					'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
-					'abcdefghijklmnopqrstuvwxyz' +
-					'!?"\'`#$%&()[]{}*+-,./\\|:;<=>@^_~',
+					'sysgerm',
 				/** `draw_chars` call-frequency */
 				char_speed_Hz: 24,
 				/** grid cell size */
