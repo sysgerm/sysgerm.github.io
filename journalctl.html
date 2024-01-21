@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="icon" type="image/x-icon" href="./icons/favicon.ico">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="./assets/styles/style.css"> 
 
     <title>0x6A6F75726E616C63746C</title>
 </head>
@@ -48,15 +48,17 @@
 <body class="overflow-y-auto" oncontextmenu="return false">
     <canvas id="c" class="fixed inset-0 w-full h-full">Update browser or enable JS</canvas>
 
-	<script src="main.js"></script>
+	<script src="./assets/scripts/main.js"></script>
     <div class="absolute z-10 w-full justify-center space-x-2 hidden md:flex">
         <p id="query" class="text-white text-center pt-2 overflow-hidden font-mono"></p>
-        
         <p id="country" class="text-white text-center pt-2 overflow-hidden font-mono"></p>
     </div>
-    <section id="landing" class="min-h-screen flex flex-col items-center justify-center space-y-4 lg:space-y-0 lg:flex-row lg:gap-5 px-8 pt-10 pb-20">
+    <div class="pb-4 inline-block">
+        <a href="/" class="absolute top-8 left-8 text-white font-bold font-mono text-base cursor-pointer"><---</a>
+    </div>
+    <section id="landing" class="flex flex-col items-center justify-center space-y-4 lg:space-y-0 lg:flex-row lg:gap-5 px-8 pt-10 md:pt-24 pb-26">
         <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 justify-items-center mt-8">
-            <a href="./journals/CSXSS.md" class="group">
+            <a href="./journals/CSXSS" class="group">
                 <div class="relative flex flex-col md:h-[20rem] md:flex-row xl:w-[25rem] lg:w-[22rem] md:w-[22rem] w-[20rem] rounded-lg border border-gray-800 overflow-hidden transform transition-transform duration-200 ease-in-out hover:scale-95">
                     <div class="hidden md:flex flex-shrink-0 w-1/3 bg-black">
                         <img src="./icons/cs2.png" class="object-contain w-full h-full ml-3 z-20" />
