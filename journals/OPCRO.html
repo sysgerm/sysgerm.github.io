@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scrollbar-hide">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="../icons/favicon.ico" />
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+
+    <title>0x6A6F75726E616C63746C</title>
+  </head>
+  <script>
+    window.onload = function () {
+      // temp mail dont even care
+      var requestUrl =
+        "https://api.ipgeolocation.io/ipgeo?apiKey=df0ce2ef645340af9485c49218021ed2";
+      $.ajax({
+        url: requestUrl,
+        type: "GET",
+        success: function (json) {
+          document.getElementById("query").innerHTML =
+            "#> Connected: " + json.ip + " from";
+          document.getElementById("country").innerHTML = json.country_name;
+        },
+      });
+    };
+
+    document.onkeydown = function (e) {
+      if (e.keyCode == 123) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == "I".charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) {
+        return false;
+      }
+
+      if (e.ctrlKey && e.shiftKey && e.keyCode == "C".charCodeAt(0)) {
+        return false;
+      }
+    };
+  </script>
+  <body class="overflow-y-auto" oncontextmenu="return false">
+    <canvas id="c" class="fixed inset-0 w-full h-full"
+      >Update browser or enable JS</canvas
+    >
+
+    <script src="../assets/scripts/main.js"></script>
+    <div class="absolute z-10 w-full justify-center space-x-2 hidden md:flex">
+      <p
+        id="query"
+        class="text-white text-center pt-2 overflow-hidden font-mono"
+      ></p>
+
+      <p
+        id="country"
+        class="text-white text-center pt-2 overflow-hidden font-mono"
+      ></p>
+    </div>
+    <div class="pb-4 inline-block">
+      <a
+        href="../journalctl"
+        class="absolute top-8 left-8 text-white font-bold font-mono text-base cursor-pointer"
+        ><---</a
+      >
+    </div>
+    <section
+      id="landing"
+      class="min-h-screen flex flex-col items-center justify-center space-y-4 lg:space-y-0 lg:flex-row lg:gap-5 px-8 pt-10 pb-20"
+    >
+      <div class="grid grid-cols-1 justify-items-center mt-8">
+        <div
+          class="relative w-full rounded-lg border border-gray-800 overflow-hidden"
+        >
+          <div
+            class="max-w-[25rem] md:max-w-[40rem] xl:max-w-[60rem] w-full bg-black flex flex-col justify-center items-center p-8"
+          >
+            <p class="text-2xl text-white font-mono font-bold">
+              Operation Cronos
+            </p>
+            <p class="text-lg font-mono text-white mb-5">#> sysgerm</p>
+            <div
+              class="text-base font-mono text-white overflow-wrap break-word w-full whitespace-pre-line max-w-[25rem] md:max-w-[40rem] xl:max-w-[60rem]"
+            >
+              <div class="font-black text-xl"># Intro</div>
+              The ransomware group lockbit (3.0) was hacked by
+              multiplegovernments in collaboration, this takeover was called
+              "Operation Cronos."
+
+              <div class="font-black text-xl"># Who is lockbit?</div>
+              Lockbit is one of the largest ransomeware groups in the world, in
+              doing so they (actually the affiliates) hacked companies to then
+              get money through ransomware. Ransomware is a type of malware that
+              infects your computer and encrypts all files, after which it asks
+              for a ransom that must then be paid for a decryption key.
+
+              <div class="font-black text-xl"># What happend?</div>
+              This group was hacked a few days ago due to an error in the
+              website(s). We are talking about an error in PHP, lockbit had used
+              an older version which led to the website being taken over.
+              Lockbit himself has posted a response to this takeover on his new
+              site where he says they did this because they did not want
+              information about https://fultoncountyga.gov/ to be leaked. He
+              further said that the information will still be leaked.
+
+              <img src="../assets/pictures/OPCRO2.png" alt="" />
+              The governments had also changed the website, here you could see
+              that for example all the "leaks" were changed by self-made posts
+              by them. Also the logo was changed by putting a sticker with
+              "seized" on it, and a lot more, all this to “bully” lockbit.
+
+              <img src="../assets/pictures/OPCRO1.png" alt="" />
+              After 4 days, lockbitsupp had already put new sites online so that
+              all the data could be downloaded and viewed again. He also said
+              that it took 4 days because there was incompatible code for the
+              newer versions of PHP and so those parts had to be changed as
+              well.
+
+              <div class="font-black text-xl"># Outro</div>
+              What do we learn from this? Always use the latest version
+              ofsoftware, that way you avoid security flaws in your systems
+              andthe authorities don't hijack your site.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
