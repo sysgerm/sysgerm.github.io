@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>What u lookin' for</title>
+</head>
+<script>
+    window.onload = function () {
+      document.onkeydown = function(e) {
+        if(e.keyCode == 123) {
+         return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+         return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+         return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+         return false;
+        }
+    
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
+         return false;
+        }      
+     };
+    }
+</script>
+<body oncontextmenu="return false">
+    <canvas id=c>Update browser or enable JS</canvas>
+	<script src=./assets/scripts/main.js></script>
+    <section id="landing" class="h-screen">
+        <div class="flex h-screen bg-black justify-center items-center flex-col">
+            <h1 class=" text-white font-mono text-xl z-10 mt-2">404</h1>
+            <div class="pb-4 inline">
+                <a
+                  href="/"
+                  class="absolute top-8 left-8 text-white font-bold font-mono text-base cursor-pointer"
+                  ><---</a
+                >
+              </div>
+        </div>
+    </section>
+</body>
+</html>
