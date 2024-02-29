@@ -10,9 +10,8 @@ const RGBDR_anim = (() => {
 		canv.getContext('2d', { alpha: false, desynchronized: true })
 	)
 
-	const light_query = matchMedia?.('(prefers-color-scheme: light)')
-	// dark must act as default, so light is optional
-	let is_dark = !light_query?.matches
+	// Ensure dark mode is always enabled
+	let is_dark = true;
 
 	const anim = (() => {
 		let playing = false
@@ -212,10 +211,7 @@ const RGBDR_anim = (() => {
 			tm_ID = setTimeout(resize, anim.settings.resize_delay_ms)
 		})
 
-		light_query?.addEventListener?.('change', e => {
-			is_dark = !e.matches
-			anim.settings.dim_factor = Math.abs(anim.settings.dim_factor) * (is_dark ? 1 : -1)
-		})
+		// No need for listener on color scheme change since it's always dark mode
 	}
 	main()
 
