@@ -10,7 +10,7 @@ const RGBDR_anim = (() => {
 		canv.getContext('2d', { alpha: false, desynchronized: true })
 	)
 
-	const light_query = matchMedia?.('(prefers-color-scheme: light)')
+	const light_query = matchMedia?.('(prefers-color-scheme: dark)')
 	// dark must act as default, so light is optional
 	let is_dark = !light_query?.matches
 
