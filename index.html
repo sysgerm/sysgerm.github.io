@@ -12,7 +12,7 @@
     <meta name="description" content="Welcome to the website of sysgerm, a security researcher. Explore insightful content on security, technology, and more.">
     <meta name="keywords" content="sysgerm, security researcher, cybersecurity, technology, hacking, programming">
     <meta name="author" content="sysgerm">
-    <meta property="og:image" content="https://sysgerm.com/icons/dark.png"> 
+    <meta property="og:image" content="https://sysgerm.com/icons/icon.png"> 
     <meta property="og:image:width" content="320"> 
     <meta property="og:image:height" content="320"> 
    
@@ -39,8 +39,10 @@
         if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
          return false;
         }
-    
         if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
+         return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'E'.charCodeAt(0)){
          return false;
         }      
      };
@@ -69,7 +71,7 @@
             <h1 class="z-10 text-white font-mono mb-3">{Security Researcher}</h1>
            
     
-            <div class="flex space-x-3 mb-">
+            <div class="flex space-x-3">
                 <a href="https://discord.gg/SZVgcC525m" target="_blank" rel="noopener noreferrer" class="z-10">
                     <img src="./icons/icons8-discord-24.png" />
                 </a>
@@ -86,6 +88,9 @@
                     <img src="./icons/icons8-youtube-24.png" />
                 </a>
             </div>
+            <a href="https://ko-fi.com/sysgerm" target="_blank" rel="noopener noreferrer" class="p-2 z-10 text-white font-mono">
+                <img class="inline" src="./icons/icons8-coffee-24.png" /> Support me :)
+            </a>
             <a href="./journalctl" class="text-white z-10 mt-1 font-mono font-bold">#> journalctl</a>
         </div>
     </section>
