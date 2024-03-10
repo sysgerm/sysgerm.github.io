@@ -24,10 +24,12 @@
         if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
          return false;
         }
-    
         if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
          return false;
         }      
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'E'.charCodeAt(0)){
+         return false;
+        }  
      };
 
     $.getJSON("https://api.ipify.org?format=json", function(data) {
