@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth scrollbar-hide">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="icon" type="image/x-icon" href="./icons/favicon.ico" />
     <link rel="stylesheet" href="./assets/styles/style.css" />
@@ -15,52 +13,52 @@
     <meta name="description" content="Welcome to the website of sysgerm, a security researcher. Explore insightful content on security, technology, and more.">
     <meta name="keywords" content="sysgerm, security researcher, cybersecurity, technology, hacking, programming">
     <meta name="author" content="sysgerm">
-    <meta property="og:image" content="https://sysgerm.com/icons/icon.png"> 
-    <meta property="og:image:width" content="320"> 
-    <meta property="og:image:height" content="320"> 
-   
-    <meta property="og:description" content="Welcome to the website of sysgerm, a security researcher. Explore insightful content on security, technology, and more."> 
-   
-    <meta property="og:url" content="https://sysgerm.com/"> 
-    
-    <meta property="og:title" content="0x6A6F75726E616C63746C">  
+    <meta property="og:image" content="https://sysgerm.com/icons/icon.png">
+    <meta property="og:image:width" content="320">
+    <meta property="og:image:height" content="320">
+
+    <meta property="og:description" content="Welcome to the website of sysgerm, a security researcher. Explore insightful content on security, technology, and more.">
+
+    <meta property="og:url" content="https://sysgerm.com/">
+
+    <meta property="og:title" content="0x6A6F75726E616C63746C">
 
     <title>0x6A6F75726E616C63746C</title>
-  </head>
-  <script>
-    window.onload = function () {
-      document.onkeydown = function(e) {
-        if(e.keyCode == 123) {
-         return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
-         return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
-         return false;
-        }
-        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
-         return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
-         return false;
-        }  
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'E'.charCodeAt(0)){
-         return false;
-        }      
-     };
+</head>
+<script>
+    window.onload = function() {
+        document.onkeydown = function(e) {
+            if (e.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'E'.charCodeAt(0)) {
+                return false;
+            }
+        };
 
-    $.getJSON("https://api.ipify.org?format=json", function(data) {
-        $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(ipapi) {
-            document.getElementById('query').innerHTML = "#> Connected: " + data.ip + " from";
-            document.getElementById('country').innerHTML = ipapi.country_name;
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+            $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(ipapi) {
+                document.getElementById('query').innerHTML = "#> Connected: " + data.ip + " from";
+                document.getElementById('country').innerHTML = ipapi.country_name;
             })
         })
     }
-  </script>
-  <body class="overflow-y-auto" oncontextmenu="return false" class="bg-black">
-    <canvas id="c" class="fixed inset-0 w-full h-full"
-      >Update browser or enable JS</canvas
+</script>
+
+<body class="overflow-y-auto" oncontextmenu="return false" class="bg-black">
+    <canvas id="c" class="fixed inset-0 w-full h-full">Update browser or enable JS</canvas
     >
 
     <script src="./assets/scripts/main.js"></script>
@@ -135,22 +133,26 @@
             </div>
           </div>
         </a>
-        <a href="#" class="group">
+        <a href="./journals/HTEXIT" class="group">
           <div
             class="relative flex flex-col md:h-[20rem] md:flex-row xl:w-[25rem] lg:w-[22rem] md:w-[22rem] w-[20rem] rounded-lg border border-gray-800 overflow-hidden transform transition-transform duration-200 ease-in-out hover:scale-95"
           >
             <div class="hidden md:flex flex-shrink-0 w-1/3 bg-black">
               <img
-                src="./icons/coffeeshop-modified.png"
+                src="./icons/lockbit.png"
                 class="object-contain w-full h-full ml-3 z-20"
               />
             </div>
             <div
               class="flex-shrink-0 md:w-2/3 bg-black flex flex-col justify-center p-8"
             >
-              <p class="text-lg text-white font-mono font-bold">Coming soon</p>
+              <p class="text-lg text-white font-mono font-bold">
+                How to: Exit Scam
+              </p>
               <p class="text-base font-mono text-white mb-5">#> sysgerm</p>
-              <p class="text-sm font-mono text-white">...</p>
+              <p class="text-sm font-mono text-white">
+                A cautionary tale of a dark web marketplace's exit scam, where reliance on auto-encryption led to extortion and chaos.
+              </p>
             </div>
           </div>
         </a>
