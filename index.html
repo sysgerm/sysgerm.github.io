@@ -1,67 +1,69 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth scrollbar-hide">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="icon" type="image/x-icon" href="./icons/favicon.ico">
-    <link rel="stylesheet" href="./assets/styles/style.css"> 
+    <link rel="stylesheet" href="./assets/styles/style.css">
 
     <meta name="description" content="Welcome to the website of sysgerm, a security researcher. Explore insightful content on security, technology, and more.">
     <meta name="keywords" content="sysgerm, security researcher, cybersecurity, technology, hacking, programming">
     <meta name="author" content="sysgerm">
-    <meta property="og:image" content="https://sysgerm.com/icons/icon.png"> 
-    <meta property="og:image:width" content="320"> 
-    <meta property="og:image:height" content="320"> 
-   
-    <meta property="og:description" content="Welcome to the website of sysgerm, a security researcher. Explore insightful content on security, technology, and more."> 
-   
-    <meta property="og:url" content="https://sysgerm.com/"> 
-    
-    <meta property="og:title" content="0x736B6964">   
-    
-    <title>0x736B6964</title>
+    <meta property="og:image" content="https://sysgerm.com/icons/icon.png">
+    <meta property="og:image:width" content="320">
+    <meta property="og:image:height" content="320">
+
+    <meta property="og:description" content="Welcome to the website of sysgerm, a security researcher. Explore insightful content on security, technology, and more.">
+
+    <meta property="og:url" content="https://sysgerm.com/">
+
+    <meta property="og:title" content="0x736B6964">
+
+    <title>&lt;script&gt;alert("testing");&lt;/script&gt;</title>
 </head>
 <script>
-    window.onload = function () {
-      document.onkeydown = function(e) {
-        if(e.keyCode == 123) {
-         return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
-         return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
-         return false;
-        }
-        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
-         return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
-         return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'E'.charCodeAt(0)){
-         return false;
-        }      
-     };
+    window.onload = function() {
+        document.onkeydown = function(e) {
+            if (e.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'E'.charCodeAt(0)) {
+                return false;
+            }
+        };
 
-    $.getJSON("https://api.ipify.org?format=json", function(data) {
-        $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(ipapi) {
-            document.getElementById('query').innerHTML = "#> Connected: " + data.ip + " from";
-            document.getElementById('country').innerHTML = ipapi.country_name;
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+            $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(ipapi) {
+                document.getElementById('query').innerHTML = "#> Connected: " + data.ip + " from";
+                document.getElementById('country').innerHTML = ipapi.country_name;
             })
         })
     }
 </script>
+
 <body oncontextmenu="return false" class="bg-black">
     <canvas id=c>Update browser or enable JS</canvas>
-	<script src=./assets/scripts/main.js></script>
+    <script src=./assets/scripts/main.js></script>
     <section id="landing" class="h-screen">
         <div class="absolute z-10 w-full justify-center space-x-2 hidden md:flex">
             <p id="query" class="text-white text-center pt-2 overflow-hidden font-mono"></p>
-            
+
             <p id="country" class="text-white text-center pt-2 overflow-hidden font-mono"></p>
         </div>
 
@@ -69,8 +71,8 @@
             <img src="./icons/inverted.png" alt="" class="z-10">
             <h1 class=" text-white font-mono text-3xl z-10 mt-2">uid=1000(sysgerm)</h1>
             <h1 class="z-10 text-white font-mono mb-3">{Security Researcher}</h1>
-           
-    
+
+
             <div class="flex space-x-3">
                 <a href="https://discord.gg/SZVgcC525m" target="_blank" rel="noopener noreferrer" class="z-10">
                     <img src="./icons/icons8-discord-24.png" />
@@ -95,4 +97,5 @@
         </div>
     </section>
 </body>
-</html> 
+
+</html>
