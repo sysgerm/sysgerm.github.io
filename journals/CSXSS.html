@@ -31,43 +31,28 @@
          return false;
         }      
      };
-
-    $.getJSON("https://api.ipify.org?format=json", function(data) {
-        $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(ipapi) {
-            document.getElementById('query').innerHTML = "#> Connected: " + data.ip + " from";
-            document.getElementById('country').innerHTML = ipapi.country_name;
-            })
-        })
     }
 </script>
 <body class="overflow-y-auto" oncontextmenu="return false" class="bg-black">
-    <canvas id="c" class="fixed inset-0 w-full h-full">Update browser or enable JS</canvas>
-
-	<script src="../assets/scripts/main.js"></script>
-    <div class="absolute z-10 w-full justify-center space-x-2 hidden md:flex">
-        <p id="query" class="text-white text-center pt-2 overflow-hidden font-mono"></p>
-        
-        <p id="country" class="text-white text-center pt-2 overflow-hidden font-mono"></p>
-    </div>
     <div class="pb-4 inline-block">
         <a href="../journalctl" class="absolute top-8 left-8 text-white font-bold font-mono text-base cursor-pointer"><---</a>
     </div>
     <section id="landing" class="min-h-screen flex flex-col items-center justify-center space-y-4 lg:space-y-0 lg:flex-row lg:gap-5 px-8 pt-10 pb-20">
         <div class="grid grid-cols-1 justify-items-center mt-8">
-            <div class="relative w-full rounded-lg border border-gray-800 overflow-hidden">
-                <div class="max-w-[25rem] md:max-w-[40rem] xl:max-w-[60rem] w-full bg-black flex flex-col justify-center items-center p-8">
-                    <p class="text-2xl text-white font-mono font-bold">
-                        Gamers at Risk
+            <div class="relative w-full rounded-lg overflow-hidden">
+                <div class="max-w-[25rem] md:max-w-[40rem] xl:max-w-[60rem] w-full flex flex-col justify-center items-center">
+                    <p class="text-xl sm:text-2xl font-mono font-bold text-white underline decoration-[#0000ff]">
+                        Gamers at risk
                     </p>
-                    <p class="text-lg font-mono text-white mb-5">
-                        #> sysgerm
+                    <p class="text-base sm:text-lg font-mono text-white mb-5">
+                        2024-05-15
                     </p>
-                    <div class="text-base font-mono text-white overflow-wrap break-word w-full whitespace-pre-line max-w-[25rem] md:max-w-[40rem] xl:max-w-[60rem]">
-                        <div class="font-black text-xl"># Intro</div>
+                    <div class="text-sm sm:text-base font-mono text-white overflow-wrap break-word w-full whitespace-pre-line max-w-[25rem] md:max-w-[40rem] xl:max-w-[60rem]">
+                        <div class="font-black text-lg sm:text-xl underline decoration-[#0000ff] "># Intro</div>
                         Whats up guys, my name is sysgerm and today we will be digging into the recent security bug that has been found in CS:GO 2 and how this affected millions of people.
 
 
-                        <div class="font-black text-xl"># What is XSS?</div>
+                        <div class="font-black text-lg sm:text-xl underline decoration-[#0000ff]"># What is XSS?</div>
                         Now you will probably be wondering, what even is XSS and why is it so dangerous? 
 
                         Cross-Site Scripting (XSS) is a security vulnerability that occurs when an attacker injects malicious scripts into a web application, which are then executed by the browsers of users visiting the affected site. This exploitation enables the attacker to compromise the integrity of the website, potentially extracting sensitive user information, such as login credentials or personal data. 
@@ -75,7 +60,7 @@
                         As u can see, this is not at all nice to find in a game with such an active player base and large player base, a lot of people were affected.
 
 
-                        <div class="font-black text-xl"># The Works</div>
+                        <div class="font-black text-lg sm:text-xl underline decoration-[#0000ff]"># The Works</div>
                         Now that you know the basics of XSS you must of thought, well where did this vulnerability lie and how was this found?
 
                         <img src="../assets/pictures/CSXSS1.png" alt="">
@@ -87,7 +72,7 @@
                         <img src="../assets/pictures/CSXSS2.png" alt="">
 
 
-                        <div class="font-black text-xl"># Can I play CS:GO 2</div>
+                        <div class="font-black text-lg sm:text-xl underline decoration-[#0000ff]"># Can I play CS:GO 2</div>
                         A couple days ago Valve released a small 7MB update that reportedly fixes the vulnerability and causes any inputted HTML to be sanitized to a regular string. 
 
                         So to answer your question, yes you can now safely play the game again.
@@ -95,7 +80,7 @@
                         <img src="../assets/pictures/CSXSS3.png" alt="">
 
 
-                        <div class="font-black text-xl"># Outro</div>
+                        <div class="font-black text-lg sm:text-xl underline decoration-[#0000ff]"># Outro</div>
                         It's sysgerm here, keeping you in the loop on all things hacking. Remember, the recent XSS vulnerability might have shaken things up, but with Valve's quick response and that 7MB patch, you can get back to fragging safely.
 
                         Happy hacking!
