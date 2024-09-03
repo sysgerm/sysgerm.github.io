@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""Today we will be digging into the recent security bug that has been found in CSGO 2 and how this affected millions of people."">
+    <meta name="keywords" content="">
+    <meta name="author" content=""sysgerm"">
+    <title>What is XSS?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Gamers at risk</h1>
+        <p style="font-size: 0.9rem; color: #888; margin: 0; padding: 0;">
+            <span style="float: right;">2024-12-11 &nbsp;|&nbsp; 3 min read &nbsp;|&nbsp; <a href="../tags/vulnerabilities.html">vulnerabilities</a></span>
+        </p>
+        <nav>
+            <a href="../index.html" class="">/ about /</a>
+            <a href="../posts.html" class="">/ posts /</a>
+            <a href="../thoughts.html" class="">/ thoughts /</a>
+        </nav>
+    </header>
+    <main>
+        <h1 id="what-is-xss">What is XSS?</h1>
+<p>Now you will probably be wondering, what even is XSS and why is it so dangerous?</p>
+<p>Cross-Site Scripting (XSS) is a security vulnerability that occurs when an attacker injects malicious scripts into a web application, which are then executed by the browsers of users visiting the affected site. This exploitation enables the attacker to compromise the integrity of the website, potentially extracting sensitive user information, such as login credentials or personal data.</p>
+<p><img alt="Pic1" src="images/CSXSS1.png"/></p>
+<p>As u can see, this is not at all nice to find in a game with such an active player base and large player base, a lot of people were affected.</p>
+<h1 id="the-works">The Works</h1>
+<p>Now that you know the basics of XSS you must of thought, well where did this vulnerability lie and how was this found?</p>
+<p>XSS is found in input fields, and that was also the case with CS:GO 2. The payload itself was placed into the username field and it got executed when doing a vote kick. The vote kick message box uses Valve’s Panorama UI which allowed HTML injection into the UI.</p>
+<p>Being XSS, you could do a lot with this, it went from executing a simple video from YouTube to grabbing all the ip’s of the players in your lobby and more. The sky really was your limit.</p>
+<p><img alt="Pic2" src="images/CSXSS2.png"/></p>
+<h1 id="can-i-play-csgo-2">Can I play CS:GO 2</h1>
+<p>A couple days ago Valve released a small 7MB update that reportedly fixes the vulnerability and causes any inputted HTML to be sanitized to a regular string.</p>
+<p>So to answer your question, yes you can now safely play the game again.</p>
+<p><img alt="Pic3" src="images/CSXSS3.png"/></p>
+<h1 id="outro">Outro</h1>
+<p>So, gamers, that wraps up our dive into the CS:GO 2 security scare. It's sysgerm here, keeping you in the loop on all things hacking. Remember, the recent XSS vulnerability might have shaken things up, but with Valve's quick response and that 7MB patch, you can get back to fragging safely.</p>
+<p>Happy hacking!</p>
+
+    </main>
+</body>
+</html>
