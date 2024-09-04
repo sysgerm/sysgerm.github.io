@@ -12,6 +12,12 @@ body {
     max-width: 55%; /* Slightly more left-aligned */
 }
 
+@media only screen and (min-width:1600px) {
+    span {
+        float:right;
+    }
+}
+
 /* Responsive adjustments */
 @media only screen and (max-width: 768px) {
     body {
@@ -27,6 +33,13 @@ body {
     nav a {
         margin-right: 0.7rem; /* Further reduce space between nav links */
         padding-right: 0.2rem; /* Less padding for nav links */
+        display: block;
+        padding-top: 1rem;
+    }
+
+    span {
+        float:none;
+        padding-bottom:3rem;
     }
 }
 
@@ -120,6 +133,13 @@ ul li::marker {
         font-size: 1rem; /* Smaller font size for very small screens */
         margin-right: 0.5rem; /* Further reduce space between nav links */
         padding-right: 0.1rem; /* Further reduce padding for nav links */
+        display:block;
+        padding-top: 1rem;
+    }
+
+    span {
+        float:none;
+        padding-bottom:3rem;
     }
 }
     
