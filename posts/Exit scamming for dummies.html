@@ -14,6 +14,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        /* Custom code block background and text color */
+        pre code {
+            background-color: #000; /* Black background for code blocks */
+            color: #fff; /* White text */
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            overflow-x: auto;
+        }
+        /* Custom inline code styling */
+        code {
+            background-color: transparent; /* No background for inline code */
+            color: #00aaff; /* Blue color for inline code text */
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.95rem;
+        }
+        /* Remove the default highlight.js background and border */
+        .hljs {
+            background-color: #000 !important; /* Black background */
+            color: #fff !important; /* White text */
+            border: none !important; /* Remove border */
+            box-shadow: none !important; /* Remove any shadows */
+        }
+    </style>
     <link rel="shortcut icon" href="../assets/icons/favicon.png" />
 </head>
 <body>
@@ -43,5 +72,12 @@
 <p>This is the first time this kind of exit scam has happened, making this fairly unique. And like always we learn something from this fairly uncomfortable situation: encrypt your messages when buying illegal goods on one of the most popular dark web marketplaces.</p>
 
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
 </body>
 </html>

@@ -13,9 +13,9 @@ body {
 }
 
 @media only screen and (min-width:1600px) {
-    span {
-        float:right;
-    }
+    #span {
+    #    float:right;
+    #}
 }
 
 /* Responsive adjustments */
@@ -72,7 +72,6 @@ img {
 }
 
 code, pre {
-    background-color: #333333; /* Dark background for code */
     padding: 0.5rem;
     border-radius: 0.5rem;
 }

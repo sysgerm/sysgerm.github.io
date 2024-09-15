@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""Do you want to hac k android applications? Yes so do I, here are some of the must know basics (not done)"">
+    <meta name="keywords" content="">
+    <meta name="author" content=""sysgerm"">
+    <meta property="og:title" content="tools">
+    <meta property="og:description" content=""Do you want to hac k android applications? Yes so do I, here are some of the must know basics (not done)"">
+    <meta property="og:image" content="../assets/icons/banner.png">
+    <title>tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        /* Custom code block background and text color */
+        pre code {
+            background-color: #000; /* Black background for code blocks */
+            color: #fff; /* White text */
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            overflow-x: auto;
+        }
+        /* Custom inline code styling */
+        code {
+            background-color: transparent; /* No background for inline code */
+            color: #00aaff; /* Blue color for inline code text */
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.95rem;
+        }
+        /* Remove the default highlight.js background and border */
+        .hljs {
+            background-color: #000 !important; /* Black background */
+            color: #fff !important; /* White text */
+            border: none !important; /* Remove border */
+            box-shadow: none !important; /* Remove any shadows */
+        }
+    </style>
+    <link rel="shortcut icon" href="../assets/icons/favicon.png" />
+</head>
+<body>
+    <header>
+        <h1>Android Hacking</h1>
+        <p style="font-size: 0.9rem; color: #888; margin: 0; padding: 0;">
+            <span style="">2024-09-11 &nbsp;|&nbsp; 4 min read &nbsp;|&nbsp; <a href="../tags/android.html">android</a></span>
+        </p>
+        <nav>
+            <a href="../index.html" class="">/ home /</a>
+            <a href="../about.html" class="">/ about /</a>
+            <a href="../posts.html" class="">/ posts /</a>
+            <a href="../thoughts.html" class="">/ thoughts /</a>
+        </nav>
+    </header>
+    <main>
+        <h1 id="tools">tools</h1>
+<ul>
+<li>androidstudio</li>
+<li>jadx</li>
+<li>phone/emulater(androidstudio)</li>
+<li>adb</li>
+<li>apktool</li>
+</ul>
+<h1 id="basics">basics</h1>
+<h2 id="code">code</h2>
+<p>If you want to get good at hacking/reversing android applications, you will need to know the basics of how it is made, this is a really fast introduction to the most important parts of it.</p>
+<pre><code>package com.example.poc;  
+
+import android.content.Intent;  
+import android.net.Uri;  
+import android.os.Bundle;  
+import android.util.Log;  
+import android.view.View;  
+import android.widget.Button;  
+import android.widget.TextView;  
+
+import androidx.activity.EdgeToEdge;  
+import androidx.appcompat.app.AppCompatActivity;  
+import androidx.core.graphics.Insets;  
+import androidx.core.view.ViewCompat;  
+import androidx.core.view.WindowInsetsCompat;  
+
+public class MainActivity extends AppCompatActivity {  
+
+    @Override  
+    protected void onCreate(Bundle savedInstanceState) {  
+        super.onCreate(savedInstanceState);  
+        EdgeToEdge.enable(this);  
+        setContentView(R.layout.activity_main);  
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -&gt; {  
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());  
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);  
+            return insets;  
+        });  
+
+        TextView appText = findViewById(R.id.apptext);  
+        appText.setText("poc");  
+
+        Button appButton = findViewById(R.id.appbutton);  
+        appButton.setOnClickListener(new View.OnClickListener() {  
+            @Override  
+            public void onClick(View view) {  
+                Log.i("Attack", "attack ran");  
+
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sysgerm.com"));  
+                startActivity(intent);  
+            }  
+        });  
+    }  
+}
+</code></pre>
+<p>This is the "MainActivity", normally this file will get ran on startup, along with some other functions.  </p>
+<p>Here are the basics you need to know about the code to get into android hacking:</p>
+<ul>
+<li><code>TextView appText = findViewById(R.id.apptext);</code> -&gt; grab the element (from the xml) with their id</li>
+<li><code>appButton.setOnClickListener(new View.OnClickListener()</code> -&gt; add a onclick listener to a button</li>
+<li><code>Log.i("Attack", "attack ran");</code> -&gt; log messages to logcat (Log.x, x can be any of the severity levels)</li>
+<li><code>Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sysgerm.com"));</code> -&gt; create an intent</li>
+</ul>
+<p>Severity levels:</p>
+<ul>
+<li>V -&gt; Verbose</li>
+<li>D -&gt; Debug</li>
+<li>I -&gt; Info</li>
+<li>W -&gt; Warning</li>
+<li>E -&gt; Error</li>
+<li>F -&gt; Fatal</li>
+<li>S -&gt; Silent </li>
+</ul>
+<p>Intents are one of the most important parts of android hacking because we can interact with other apps, we can get an intent using the <code>getIntent()</code> function.</p>
+<p>You can find out more about the intent looking at the <code>AndroidManifest.xml</code> file:</p>
+<pre><code>// AndroidManifest.xml
+&lt;intent-filter&gt;
+    &lt;action android:name="android.intent.action.SEND" /&gt;
+    &lt;data android:mimeType="text/plain" /&gt;
+    &lt;category android:name="android.intent.category.DEFAULT" /&gt;
+&lt;/intent-filter&gt;
+</code></pre>
+<p>You can also customize the elements on the screen by:</p>
+<ol>
+<li>manually editing your xml file</li>
+<li>using the gui editor in androidstudio</li>
+</ol>
+<p><em>WTF is <strong>JNI</strong> (Java Native Language)</em></p>
+<p><strong>JNI</strong> is the interface <strong>used to call in native code, commonly used to embed C or C++ code or libraries into an application</strong></p>
+<h2 id="running-your-app">running your app</h2>
+<p>You can run your a various of ways, these are the couple of ways I do things:</p>
+<ol>
+<li>use androidstudio emulator</li>
+<li>connect to real device (with adb debugging on) on androidstudio</li>
+<li>using raw adb</li>
+</ol>
+<h2 id="adb">adb</h2>
+<p>ADB is a very handy tool when creating/hacking android apps, you can interact with the connected device via your computer, some of the most important command include but are not limited to:</p>
+<ul>
+<li><code>adb shell</code> -&gt; spawn a shell on the device as the shell user (limited privileges)</li>
+<li><code>adb push FILE OUTPUT</code> -&gt; puts a file on the device, must include an output path</li>
+<li><code>adb pull FILE [OUTPU]</code> -&gt; pulls a file off of the phone onto your pc, you dont need  an output path</li>
+<li><code>adb install LOCALAPK</code> -&gt; installs a package on the device</li>
+<li><code>adb uninstall REMOTEAPK</code> -&gt; uninstalls a package on the device</li>
+<li><code>adb shell pm list packages [-3]</code> -&gt; lists all packages, pm stands for package manager, <code>-3</code> is used when you only want to see the third party packages</li>
+<li><code>adb shell pm clear PACKAGE</code> -&gt; clears the data collected from a package</li>
+<li><code>adb shell dumpsys [package] [PACKAGE]</code> -&gt; dumps information such as activities and permissions (for a package)</li>
+<li><code>adb shell am start PACKAGE/ACTIVITY</code> -&gt; starts a specific activity in a package</li>
+<li><code>adb logcat [-v VERSION] "FILTER"</code> -&gt; spits out logging information</li>
+<li><code>adb shell pm path PACKAGE</code> -&gt; get the path of the package</li>
+</ul>
+<h2 id="jadx">jadx</h2>
+<p>Jadx is a dex to java decompiler, it is used for the revese engineering of APK's.</p>
+<p>It is very straight forward to use, there are a couple of things I always look out for:</p>
+<ul>
+<li><code>AndroidManifest.xml</code> file -&gt; has alot of useful information like the activities and intent information</li>
+<li>"Source code" -&gt; for viewing a basic version of the source code used (look at the activities)</li>
+</ul>
+<h2 id="apks">APK's</h2>
+<p>Now that we have basic tools and a basic understanding of android and java itself, we can start reverse engineering android apps.</p>
+<p>Most android applications are written in <strong>Java</strong> or <strong>Kotlin</strong>, the java or kotlin code then gets converted into a <em>.class</em> file using the <strong>javac</strong> or <strong>kotlinc</strong> compiler. 
+This <em>.class</em> file is just normal Java bytecode, the additional compiler <strong>d8</strong> turns the <em>.class</em> file into a <strong>classes.dex</strong> file, this file contains <strong>dalvik</strong> byte code, a special type of code for android devices. This code then gets run by <strong>ART</strong> (Android Run Time) or on older devices the <strong>Dalvik VM</strong>.</p>
+<p>Here is a step by step guide on how java/kotlin code gets ran on an android app:</p>
+<ol>
+<li>Java or Kotlin code gets compiled (by javac or kotlinc) and turned into a <em>.class</em> file</li>
+<li>D8 turns the <em>.class</em> file into a classes.dex file</li>
+<li>This classes.dex file (with dalvik code) gets ran by ART or Dalvik VM</li>
+</ol>
+<p><em>But wait, why on android am I running an apk instead of the classes.dex file?</em></p>
+<p>This is because an android app needs a few more files/resources to work properly.
+An APK is a combination of files being:</p>
+<ul>
+<li>classes.dex</li>
+<li>AndroidManifest.xml</li>
+<li>Resources</li>
+<li>Signature</li>
+</ul>
+<p>This signature is very important, APK's are cryptographicaly signed so that only the real authors can change the code and build it, thats why if we change the code in an application when reverse engineering and not sign our new APK, we get an error that we can not run this file.</p>
+<h3 id="apktool">apktool</h3>
+<p>Now in the real world we could just rename the APK file to a .zip and extract it to get all of the items listed above but we are better than that, real reverse engineers use <code>apktool</code>.</p>
+<p>This is a really handy tool for anything (you guessed it) APK</p>
+<p>Here are a couple of basic commands:</p>
+<ul>
+<li><code>apktool d APK</code> -&gt; this will disassemble the APK</li>
+<li><code>apktool b</code> -&gt; build the (changed) files
+<ul>
+<li>before changing anything to this app <strong>UNINSTALL THE APP</strong></li>
+<li><code>keytool -genkey -v -keystore KEYSTORE -alias ALIAS -keyalg RSA -keysize 2048 -validity TIME</code> -&gt; generate a self signed key for this application so it can run</li>
+<li><code>jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore KEYSTORE APK KEY</code> -&gt; sign the apk itself</li>
+<li>Sometimes you get an error saying <code>Failed to extract native libraries</code>, you will have to change <code>extractNativeLibs="true"</code> in your new  <code>Android.xml</code> file</li>
+</ul></li>
+</ul>
+<p><em>WTF is <strong>smali</strong>?!</em></p>
+<p>I guessed now u noticed that the dex files are gone, its smali now, for now just know that <strong>smali</strong> is an <strong>assembler for dalvik bytecode</strong>. If you wanted to know how it dissasembles the code, it uses <strong>baksmali</strong>.</p>
+<h2 id="reverse-engineering">reverse engineering</h2>
+<p>Now that we have succesfully decompiled the APK we can start reverse engineering this sucker.</p>
+<p>Here is how I go about reverse engineering any of my APK's:</p>
+<ol>
+<li>Look at the <code>AndroidManifest.xml</code> file</li>
+<li><p>Look at the exported activities:</p>
+<ul>
+<li><img alt="Activities" src="images/AH1.png"/>
+<strong>See where android:exported="true"</strong> - <em>Exported activities can be started by other apps or (even) adb</em>
+<em>The activity that gets started when we launch the app is the one with the intent filter, MAIN and LAUNCHER</em></li>
+</ul></li>
+<li>Check for harcoded API keys/passwords/* with jadx (using global search, shared objects strings, etc.)</li>
+</ol>
+<p>NOT FINISHED</p>
+
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</body>
+</html>
