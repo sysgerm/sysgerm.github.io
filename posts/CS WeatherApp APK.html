@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=""In this first case study we will be hacking a weather application for android, hack along!"">
+    <meta name="keywords" content="">
+    <meta name="author" content=""sysgerm"">
+    <meta property="og:title" content="Weather app">
+    <meta property="og:description" content=""In this first case study we will be hacking a weather application for android, hack along!"">
+    <meta property="og:image" content="../assets/icons/banner.png">
+    <title>Weather app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        /* Custom code block background and text color */
+        pre code {
+            background-color: #000; /* Black background for code blocks */
+            color: #fff; /* White text */
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            overflow-x: auto;
+        }
+        /* Custom inline code styling */
+        code {
+            background-color: transparent; /* No background for inline code */
+            color: #00aaff; /* Blue color for inline code text */
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.95rem;
+        }
+        /* Remove the default highlight.js background and border */
+        .hljs {
+            background-color: #000 !important; /* Black background */
+            color: #fff !important; /* White text */
+            border: none !important; /* Remove border */
+            box-shadow: none !important; /* Remove any shadows */
+        }
+    </style>
+    <link rel="shortcut icon" href="../assets/icons/favicon.png" />
+</head>
+<body>
+    <header>
+        <h1>Case study weather app</h1>
+        <p style="font-size: 0.9rem; color: #888; margin: 0; padding: 0;">
+            <span style="">2024-09-19 &nbsp;|&nbsp; 5 min read &nbsp;|&nbsp; <a href="../tags/android.html">android</a></span>
+        </p>
+        <nav>
+            <a href="../index.html" class="">/ home /</a>
+            <a href="../about.html" class="">/ about /</a>
+            <a href="../posts.html" class="">/ posts /</a>
+            <a href="../thoughts.html" class="">/ thoughts /</a>
+        </nav>
+    </header>
+    <main>
+        <h1 id="weather-app">Weather app</h1>
+<h2 id="research-goals">Research goals</h2>
+<ul>
+<li>What does the app do</li>
+<li>Where is the data coming from (custom API)</li>
+<li>What is the authentication (API)</li>
+<li>Why are the weather functions disabled</li>
+<li>Further reverse engineering of the API</li>
+<li>Reversing the updated package</li>
+</ul>
+<h3 id="what-does-the-app-do">What does the app do</h3>
+<p>The app looks like a weather app where u can give a zip code and it will give you the weather.</p>
+<p><img alt="Pic1" src="images/CSW1.png"/></p>
+<h3 id="where-is-the-data-coming-from-custom-api">Where is the data coming from (custom API)</h3>
+<p>Upon further reverse engineering I used jadx to search for strings, I searched for API and made sure to also enable resources, and the we found it, it used a custom API:</p>
+<p><img alt="Pic2" src="images/CSW2.png"/></p>
+<h3 id="what-is-the-authentication-api">What is the authentication (API)</h3>
+<p>After finding the api endpoint I noticed it also passed in an API key, which was stored inside of the strings.xml file.</p>
+<p><img alt="Pic3" src="images/CSW3.png"/></p>
+<h3 id="why-are-the-weather-functions-disabled">Why are the weather functions disabled</h3>
+<p>It uses a zip to enable the weather functionality, when I looked at the MainActivity file I saw that it is comparing this zip with 13337, this was our way in!</p>
+<p><img alt="Pic4" src="images/CSW4.png"/></p>
+<h3 id="further-reverse-engineering-of-the-api">Further reverse engineering of the API</h3>
+<p>To get our last objective I looked back at the api, I found the function where it passed in the apikey and found that it also needed some other settings to correctly send a good API call, without any errors.</p>
+<p><img alt="Pic5" src="images/CSW5.png"/></p>
+<p>The format of the time was also given above.</p>
+<p><img alt="Pic6" src="images/CSW6.png"/></p>
+<p>After forging my curl request, I could do an api call for any zip, even zip codes smaller than 5 characters.</p>
+<p><img alt="Pic7" src="images/CSW7.png"/></p>
+<pre><code>curl "https://ht-api-mocks-lcfc4kr5oa-uc.a.run.app/xml/SOAP_server/ndfdXMLclient.php?whichClient=NDFDgen&amp;zipCodeList=42&amp;product=time-series&amp;begin=2024-09-11T14:21&amp;maxt=maxt&amp;mint=mint&amp;dew=dew&amp;appt=appt&amp;wx=wx&amp;icons=icons&amp;wwa=wwa" -H "X-API-KEY: HXT{android-api-key-b1872g}" -A "HextreeForecastUSA/v4.x" -X GET
+</code></pre>
+<h2 id="reversing-the-updated-package">Reversing the updated package</h2>
+<p>Now that we have successfully found the secret flag in the first application, we have a more obfuscated updated version of this application to also crack and reverse engineer.</p>
+<p>When we try and find the string "api" in the files we can see it executes a function called <code>getKey()</code> with a string as value:</p>
+<p><img alt="Pic8" src="images/CSW8.png"/></p>
+<p>However if we go to this function call we notice that this function is not found in the "normal" code itself, this is found in the library, we can confirm this whenever we see these indicators:</p>
+<p><img alt="Pic9" src="images/CSW9.png"/></p>
+<p>We can get this lib file using apktool or jadx.</p>
+<p>After we acquire this file we have a few options for finding out what the <code>getKey()</code> function does:</p>
+<ol>
+<li>Reversing the file with <code>ghidra</code></li>
+<li>Network interception</li>
+<li>Implementing the lib into one of our projects to run the function</li>
+</ol>
+<p>I will be trying out the 3rd option.</p>
+<p>This were the steps I used to get the flag out if the library file:</p>
+<ol>
+<li>Open a poc project in <code>androidstudio</code> (we will call the function over here)</li>
+<li>Create a "<strong>jniLibs</strong>" in the <code>app/src/main</code> folder for the imported native libraries</li>
+<li>Put the libraries in this folder</li>
+<li>Copy the package name and class name exactly how they are, this is needed for having the same function names that match the java names (u can see this whenever you are reversing this library in <code>ghidra</code>)
+<img alt="Pic10" src="images/CSW10.png"/></li>
+<li>Now just execute the function and voila, your flag will be right there :)</li>
+</ol>
+<p>These are the basics of reversing an android application, thank you all for reading along and happy hacking.</p>
+
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</body>
+</html>
