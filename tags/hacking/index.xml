@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hacking on 0x4d, 0x5a</title>
+    <link>http://localhost:1313/tags/hacking/</link>
+    <description>Recent content in Hacking on 0x4d, 0x5a</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2025 sysgerm @ localhost</copyright>
+    <lastBuildDate>Mon, 12 May 2025 18:13:12 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/hacking/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Weather App Hacking</title>
+      <link>http://localhost:1313/posts/2025/weather-app-apk/</link>
+      <pubDate>Mon, 12 May 2025 18:13:12 +0200</pubDate>
+      
+      <guid>http://localhost:1313/posts/2025/weather-app-apk/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/2025/weather-app-apk/featured.png" />
+    </item>
+    
+    <item>
+      <title>Operation Cronos</title>
+      <link>http://localhost:1313/posts/2025/operation-cronos/</link>
+      <pubDate>Mon, 12 May 2025 18:10:26 +0200</pubDate>
+      
+      <guid>http://localhost:1313/posts/2025/operation-cronos/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/2025/operation-cronos/featured.png" />
+    </item>
+    
+    <item>
+      <title>Exit Scamming for dummies</title>
+      <link>http://localhost:1313/posts/2025/exit-scamming/</link>
+      <pubDate>Mon, 12 May 2025 18:09:23 +0200</pubDate>
+      
+      <guid>http://localhost:1313/posts/2025/exit-scamming/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/2025/exit-scamming/featured.png" />
+    </item>
+    
+    <item>
+      <title>Gamers at Risk</title>
+      <link>http://localhost:1313/posts/2025/csgo-xss/</link>
+      <pubDate>Mon, 12 May 2025 17:41:38 +0200</pubDate>
+      
+      <guid>http://localhost:1313/posts/2025/csgo-xss/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/2025/csgo-xss/featured.png" />
+    </item>
+    
+  </channel>
+</rss>
