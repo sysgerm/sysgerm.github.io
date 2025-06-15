@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>posts on sys</title>
+    <link>https://sysgerm.xyz/posts/</link>
+    <description>Recent content in posts on sys</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sysgerm.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android basics</title>
+      <link>https://sysgerm.xyz/posts/android-basics/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://sysgerm.xyz/posts/android-basics/</guid>
+      <description>&lt;p&gt;Some of the basics of android hacking and foundational skills needed to succeed.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CSGO XSS</title>
+      <link>https://sysgerm.xyz/posts/csgo-xss/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://sysgerm.xyz/posts/csgo-xss/</guid>
+      <description>&lt;p&gt;Now you will probably be wondering, what even is XSS and why is it so dangerous?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exit Scamming for dummies</title>
+      <link>https://sysgerm.xyz/posts/exit-scamming/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://sysgerm.xyz/posts/exit-scamming/</guid>
+      <description>&lt;p&gt;You probably have heard of a dark web marketplace, it is a market you can only visit via tor where you can buy different (illegal) goods. From drugs to hiring a hit man on a person, this can all be done on a dark web marketplace.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Operation Cronos</title>
+      <link>https://sysgerm.xyz/posts/operation-cronos/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://sysgerm.xyz/posts/operation-cronos/</guid>
+      <description>&lt;p&gt;Lockbit is one of the largest ransomeware groups in the world, in doing so they (actually the affiliates) hack companies to then get money through ransomware. Ransomware is a type of malware that infects your computer and encrypts all files, after which it asks for a ransom that must then be paid for a decryption key.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Weather App Hacking</title>
+      <link>https://sysgerm.xyz/posts/weather-app-apk/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://sysgerm.xyz/posts/weather-app-apk/</guid>
+      <description>&lt;p&gt;Hacking a weather app, how hard could it be?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

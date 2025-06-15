@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sys</title>
+    <link>https://sysgerm.xyz/</link>
+    <description>Recent content on sys</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sysgerm.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android basics</title>
+      <link>https://sysgerm.xyz/posts/android-basics/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://sysgerm.xyz/posts/android-basics/</guid>
+      <description>&lt;p&gt;Some of the basics of android hacking and foundational skills needed to succeed.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CSGO XSS</title>
+      <link>https://sysgerm.xyz/posts/csgo-xss/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://sysgerm.xyz/posts/csgo-xss/</guid>
+      <description>&lt;p&gt;Now you will probably be wondering, what even is XSS and why is it so dangerous?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exit Scamming for dummies</title>
+      <link>https://sysgerm.xyz/posts/exit-scamming/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://sysgerm.xyz/posts/exit-scamming/</guid>
+      <description>&lt;p&gt;You probably have heard of a dark web marketplace, it is a market you can only visit via tor where you can buy different (illegal) goods. From drugs to hiring a hit man on a person, this can all be done on a dark web marketplace.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Operation Cronos</title>
+      <link>https://sysgerm.xyz/posts/operation-cronos/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://sysgerm.xyz/posts/operation-cronos/</guid>
+      <description>&lt;p&gt;Lockbit is one of the largest ransomeware groups in the world, in doing so they (actually the affiliates) hack companies to then get money through ransomware. Ransomware is a type of malware that infects your computer and encrypts all files, after which it asks for a ransom that must then be paid for a decryption key.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Weather App Hacking</title>
+      <link>https://sysgerm.xyz/posts/weather-app-apk/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://sysgerm.xyz/posts/weather-app-apk/</guid>
+      <description>&lt;p&gt;Hacking a weather app, how hard could it be?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://sysgerm.xyz/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sysgerm.xyz/about/</guid>
+      <description>&lt;h2 id=&#34;whoami&#34;&gt;whoami&lt;/h2&gt;&#xA;&lt;p&gt;welcome to my side of the internet, I am sysgerm, your abnormal security researcher. I am interested in offensive security, low-level languages, malware and the art of OSINT&lt;/p&gt;&#xA;&lt;h2 id=&#34;links&#34;&gt;links&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;github: &lt;a href=&#34;https://github.com/sysgerm&#34;&gt;https://github.com/sysgerm&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;x dot com: &lt;a href=&#34;https://x.com/@sysgerm&#34;&gt;https://x.com/@sysgerm&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;instagram: &lt;a href=&#34;https://instagram.com/sysgerm&#34;&gt;https://instagram.com/sysgerm&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;work-experience&#34;&gt;work experience&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;worked as a Security Researcher focusing on exploit development, reverse engineering, and active threat analysis&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;assisting in teaching coding principles, debugging student projects, and providing code support&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;participated in both Red and Blue team activities during a short but intensive internship&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://sysgerm.xyz/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sysgerm.xyz/projects/</guid>
+      <description>&lt;p&gt;proij&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
