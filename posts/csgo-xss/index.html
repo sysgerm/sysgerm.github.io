@@ -74,17 +74,17 @@ Jun. 15, 2025
 <p>Now you will probably be wondering, what even is XSS and why is it so dangerous?</p>
 <h2 id="intro">Intro</h2>
 <p>Cross-Site Scripting (XSS) is a security vulnerability that occurs when an attacker injects malicious scripts into a web application, which are then executed by the browsers of users visiting the affected site. This exploitation enables the attacker to compromise the integrity of the website, potentially extracting sensitive user information, such as login credentials or personal data.</p>
-<p><img src="images/CSXSS1.png" alt="Pic1"></p>
+<p><img src="/images/CSXSS1.png" alt="Pic1"></p>
 <p>As u can see, this is not at all nice to find in a game with such an active player base and large player base, a lot of people were affected.</p>
 <h2 id="the-works">The Works</h2>
 <p>Now that you know the basics of XSS you must of thought, well where did this vulnerability lie and how was this found?</p>
 <p>XSS is found in input fields, and that was also the case with CS:GO 2. The payload itself was placed into the username field and it got executed when doing a vote kick. The vote kick message box uses Valve’s Panorama UI which allowed HTML injection into the UI.</p>
 <p>Being XSS, you could do a lot with this, it went from executing a simple video from YouTube to grabbing all the ip’s of the players in your lobby and more. The sky really was your limit.</p>
-<p><img src="images/CSXSS2.png" alt="Pic1"></p>
+<p><img src="/images/CSXSS2.png" alt="Pic1"></p>
 <h2 id="can-i-play-csgo-2">Can I play CS:GO 2</h2>
 <p>A couple days ago Valve released a small 7MB update that reportedly fixes the vulnerability and causes any inputted HTML to be sanitized to a regular string.</p>
 <p>So to answer your question, yes you can now safely play the game again.</p>
-<p><img src="images/CSXSS3.png" alt="Pic1"></p>
+<p><img src="/images/CSXSS3.png" alt="Pic1"></p>
 <h2 id="outro">Outro</h2>
 <p>So, gamers, that wraps up our dive into the CS:GO 2 security scare. It&rsquo;s sysgerm here, keeping you in the loop on all things hacking. Remember, the recent XSS vulnerability might have shaken things up, but with Valve&rsquo;s quick response and that 7MB patch, you can get back to fragging safely.</p>
 <p>Happy hacking!</p>

@@ -249,6 +249,10 @@ figure {
     padding-top: 0;
 }
 
+pre {
+    background-color: white;
+}
+
 @media only screen and (max-width: 850px) {
     .site-name {
         width: 2ch;
@@ -311,4 +315,13 @@ figure {
         margin-top: 50px;
         padding-top: 5px;
     }
+}
+
+pre,
+pre code,
+code,
+.hljs,
+pre code.hljs {
+  background-color: var(--background-color) !important;
+  color: var(--font-color) !important;
 }
