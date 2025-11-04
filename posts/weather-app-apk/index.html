@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>Weather App Hacking | sys</title>
@@ -23,11 +23,11 @@
 <meta name="theme-color" content="#ffffff">
 
 
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/custom.css">
+      <link rel="stylesheet" href="/css/main.min.49d5e62e0d328ac7eddb5e61b7fee7b34069a5ab3074feaa8e3aa1be396bf3a6.css" integrity="sha256-SdXmLg0yisft215ht/7ns0BppaswdP6qjjqhvjlr86Y=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU=" crossorigin="anonymous">
 
 
-      <script src="/js/main.js"></script>
+        <script src="/js/main.310c2985a3508af8983deba04431a84709f44d808518e0a5fe94bc42bfffd23b.js" integrity="sha256-MQwphaNQiviYPeugRDGoRwn0TYCFGOCl/pS8Qr//0js=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 
 
@@ -113,30 +113,30 @@
 </ul>
 <h3 id="what-does-the-app-do">What does the app do</h3>
 <p>The app looks like a weather app where u can give a zip code and it will give you the weather.</p>
-<p><img src="images/CSW1.png" alt="Pic1"></p>
+<p><img src="/images/CSW1.png" alt="Pic1"></p>
 <h3 id="where-is-the-data-coming-from-custom-api">Where is the data coming from (custom API)</h3>
 <p>Upon further reverse engineering I used jadx to search for strings, I searched for API and made sure to also enable resources, and the we found it, it used a custom API:</p>
-<p><img src="images/CSW2.png" alt="Pic2"></p>
+<p><img src="/images/CSW2.png" alt="Pic2"></p>
 <h3 id="what-is-the-authentication-api">What is the authentication (API)</h3>
 <p>After finding the api endpoint I noticed it also passed in an API key, which was stored inside of the strings.xml file.</p>
-<p><img src="images/CSW3.png" alt="Pic3"></p>
+<p><img src="/images/CSW3.png" alt="Pic3"></p>
 <h3 id="why-are-the-weather-functions-disabled">Why are the weather functions disabled</h3>
 <p>It uses a zip to enable the weather functionality, when I looked at the MainActivity file I saw that it is comparing this zip with 13337, this was our way in!</p>
-<p><img src="images/CSW4.png" alt="Pic4"></p>
+<p><img src="/images/CSW4.png" alt="Pic4"></p>
 <h3 id="further-reverse-engineering-of-the-api">Further reverse engineering of the API</h3>
 <p>To get our last objective I looked back at the api, I found the function where it passed in the apikey and found that it also needed some other settings to correctly send a good API call, without any errors.</p>
-<p><img src="images/CSW5.png" alt="Pic5"></p>
+<p><img src="/images/CSW5.png" alt="Pic5"></p>
 <p>The format of the time was also given above.</p>
-<p><img src="images/CSW6.png" alt="Pic6"></p>
+<p><img src="/images/CSW6.png" alt="Pic6"></p>
 <p>After forging my curl request, I could do an api call for any zip, even zip codes smaller than 5 characters.</p>
-<p><img src="images/CSW7.png" alt="Pic7"></p>
+<p><img src="/images/CSW7.png" alt="Pic7"></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#666;font-style:italic">&#34;https://ht-api-mocks-lcfc4kr5oa-uc.a.run.app/xml/SOAP_server/ndfdXMLclient.php?whichClient=NDFDgen&amp;zipCodeList=42&amp;product=time-series&amp;begin=2024-09-11T14:21&amp;maxt=maxt&amp;mint=mint&amp;dew=dew&amp;appt=appt&amp;wx=wx&amp;icons=icons&amp;wwa=wwa&#34;</span> -H <span style="color:#666;font-style:italic">&#34;X-API-KEY: HXT{android-api-key-b1872g}&#34;</span> -A <span style="color:#666;font-style:italic">&#34;HextreeForecastUSA/v4.x&#34;</span> -X GET
 </span></span></code></pre></div><h2 id="reversing-the-updated-package">Reversing the updated package</h2>
 <p>Now that we have successfully found the secret flag in the first application, we have a more obfuscated updated version of this application to also crack and reverse engineer.</p>
 <p>When we try and find the string &ldquo;api&rdquo; in the files we can see it executes a function called <code>getKey()</code> with a string as value:</p>
-<p><img src="images/CSW8.png" alt="Pic8"></p>
+<p><img src="/images/CSW8.png" alt="Pic8"></p>
 <p>However if we go to this function call we notice that this function is not found in the &ldquo;normal&rdquo; code itself, this is found in the library, we can confirm this whenever we see these indicators:</p>
-<p><img src="images/CSW9.png" alt="Pic9"></p>
+<p><img src="/images/CSW9.png" alt="Pic9"></p>
 <p>We can get this lib file using apktool or jadx.</p>
 <p>After we acquire this file we have a few options for finding out what the <code>getKey()</code> function does:</p>
 <ol>
@@ -179,8 +179,8 @@
   </main>
   <footer>
     <p>
-  &copy; Copyright 2025 &middot;
-  <a href="https://github.com/ntk148v/shibui">shibui</a>
+    &copy; copyright 2025 &middot;
+    <a href="https://en.wikipedia.org/wiki/Caffeine">caffeine</a>
 </p>
 
   </footer>
