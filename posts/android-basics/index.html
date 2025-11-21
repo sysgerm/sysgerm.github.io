@@ -161,9 +161,11 @@
 <p>Here are the basics you need to know about the code to get into android hacking:</p>
 <ul>
 <li><code>TextView appText = findViewById(R.id.apptext);</code> -&gt; grab the element (from the xml) with their id</li>
-<li><code>appButton.setOnClickListener(new View.OnClickListener()</code> -&gt; add a onclick listener to a button</li>
+<li><code>appButton.setOnClickListener</code>
+<code>(new View.OnClickListener()</code> -&gt; add a onclick listener to a button</li>
 <li><code>Log.i(&quot;Attack&quot;, &quot;attack ran&quot;);</code> -&gt; log messages to logcat (Log.x, x can be any of the severity levels)</li>
-<li><code>Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(&quot;https://sysgerm.com&quot;));</code> -&gt; create an intent</li>
+<li><code>Intent intent = new Intent(Intent.ACTION_VIEW,</code>
+<code>Uri.parse(&quot;https://sysgerm.com&quot;));</code> -&gt; create an intent</li>
 </ul>
 <p>Severity levels:</p>
 <ul>
@@ -248,8 +250,10 @@ An APK is a combination of files being:</p>
 <li><code>apktool b</code> -&gt; build the (changed) files
 <ul>
 <li>before changing anything to this app <strong>UNINSTALL THE APP</strong></li>
-<li><code>keytool -genkey -v -keystore KEYSTORE -alias ALIAS -keyalg RSA -keysize 2048 -validity TIME</code> -&gt; generate a self signed key for this application so it can run</li>
-<li><code>jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore KEYSTORE APK KEY</code> -&gt; sign the apk itself</li>
+<li><code>keytool -genkey -v -keystore KEYSTORE -alias</code>
+<code>ALIAS -keyalg RSA -keysize 2048 -validity TIME</code> -&gt; generate a self signed key for this application so it can run</li>
+<li><code>jarsigner -verbose -sigalg SHA1withRSA</code>
+<code>-digestalg SHA1 -keystore KEYSTORE APK KEY</code> -&gt; sign the apk itself</li>
 <li>Sometimes you get an error saying <code>Failed to extract native libraries</code>, you will have to change <code>extractNativeLibs=&quot;true&quot;</code> in your new  <code>Android.xml</code> file</li>
 </ul>
 </li>
